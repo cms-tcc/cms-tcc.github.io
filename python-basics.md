@@ -87,7 +87,7 @@ import time
 led = cp.red_led
 
 while True:
-print("Hello, world!")
+    print("Hello, world!")
     led.value = True
     time.sleep(0.5)
     led.value = False
