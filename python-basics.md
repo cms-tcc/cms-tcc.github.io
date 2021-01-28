@@ -1,8 +1,8 @@
 ---
-title: Setting Up Python on the Circuit Playground Express
+title: Python Basics
 ---
 
-Here's how to set up Python on your Circuit Playground Express (CPX) board.
+Here's how to set up Python on your Circuit Playground Express (CPX) board. This guide will also walk you through the basics of using Python.
 
 ## Installing Python
 Download the latest version of CircuitPython from [here](https://circuitpython.org/board/circuitplayground_express/). Save it somewhere handy.
@@ -70,5 +70,52 @@ The last section starts with a `while True:` statement, which basically means "f
 
 There are four lines of code inside the loop. The first one, `led.value = True`, tells the LED to turn on. The next one, `time.sleep(0.5)`, tells the board to sleep, or wait, for 0.5 seconds. Then it does that again, turning the LED off. When you edited the code, it made the LED stay on for less time.
 
+## Using the Serial Console
+One common feature of programming is a "print statement". This is a line that causes your program to output some text. In Python, it looks like
+```py
+print("Hello, world!")
+```
+This print statement would result in "Hello, world!" But these print statements need somewhere to show. That's where the serial console comes in!
+
+In Mu, click on the "Serial" button in the toolbar and click it. 
+
+Now add a print statement anywhere in your code. Here's one example:
+```py
+from adafruit_circuitplayground import cp
+import time
+
+led = cp.red_led
+
+while True:
+print("Hello, world!")
+    led.value = True
+    time.sleep(0.5)
+    led.value = False
+    time.sleep(0.5)
+```
+Now save the file. If you take a look at your serial window, you should see your print statement appear!
+
+## Using the Console to Debug
+Now, let's introduce an error to our code to see what happens.
+
+Remove the last `e` from the `led.value = True` line so it says `led.value = Tru`. Save your code. The LED will stop blinking, and you might have a colored light flashing at you. Don't panic! Take a look at your serial console. There will be a few things in there. Let's break it down.
+
+The `Traceback (most recent call last):` is telling you what it was doing when it crashed. Here, it's telling you that it got to line 8 of the `code.py` file. The next line is your error: `NameError: name 'Tru' is not defined`. This might not mean anything to you, but knowing that your error was on line 8, it gives you a great place to start your debugging. 
+
+Go back to your code, and look at line 8. Obviously, you already know what went wrong. But if you didn't, you'd want to look at that line, or try googling the error. But in this case, you know what to look for - spelling True wrong. Fix the typo and save the file. Congratulations! You just fixed your first error! 
+
+## The REPL
+The other thing you can do over the serial console is use the REPL, or Read-Evaluate-Print-Loop. This allows you to enter lines of code and instantly run them. You can use it to debug a program line-by-line, or experiment with new code.
+
+To use the REPL, connect to the serial console and press <kbd>CTRL + C</kbd> (yes, even on Mac). If there is code running, it will stop and you'll see "Press any key to enter the REPL. Use CTRL-D to reload." Follow those instructions, and press any key on your keyboard.
+
+If there is no code running, you will enter the REPL immediately after pressing Ctrl + C. There is no information about what your board was doing before you interrupted it because there is no code running.
+
+Either way, once you press a key you'll see a `>>>` prompt welcoming you to the REPL!
+
+Here, you can run individual lines of code. Try running your blink program, one line at a time.
+
+To exit the REPL, press <kbd>CTRL + D</kbd> (still even on Mac). This will restart your previous program.
+
 ## Don't stop there!
-There's so much more you can do. [Check here](https://learn.adafruit.com/category/express) for a few project ideas.
+There's so much more you can do. Go [here](https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library) for everything you can do, or [check here](https://learn.adafruit.com/category/express) for a few project ideas.
