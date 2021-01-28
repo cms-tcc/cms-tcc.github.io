@@ -77,7 +77,7 @@ print("Hello, world!")
 ```
 This print statement would result in "Hello, world!" But these print statements need somewhere to show. That's where the serial console comes in!
 
-In Mu, click on the "Serial" button in the toolbar and click it. 
+In Mu, find the "Serial" button in the toolbar and click it. 
 
 Now add a print statement anywhere in your code. Here's one example:
 ```py
