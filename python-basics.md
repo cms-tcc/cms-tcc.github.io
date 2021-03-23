@@ -12,7 +12,7 @@ With the CPX plugged into your computer, double-click the `RESET` button. (It's 
 Drag the file you just downloaded onto `CPLAYBOOT`. You should get some [blinkenlights](https://en.wikipedia.org/wiki/Blinkenlights) and a new USB drive called `CIRCUITPY` should appear.
 
 ## Installing the Mu Editor
-Install the Mu editor from [here](https://github.com/mu-editor/mu/releases/tag/1.1.0-alpha.2).
+Install the Mu editor from [here](https://github.com/mu-editor/mu/releases/latest).
 
 Mu is the easiest editor to get started with, please use it, unless you are an experienced coder with a favorite editor already!
 
