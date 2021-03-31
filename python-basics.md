@@ -18,6 +18,14 @@ Mu is the easiest editor to get started with, please use it, unless you are an e
 
 When you first start Mu, you will be asked to choose a mode. Choose "CircuitPython" here.
 
+### If you aren't using Mu
+You'll need to use `screen` to see the output and use the REPL. 
+On a Mac: In a terminal, type
+```sh
+screen /dev/cu.usb[TAB] 115200
+```
+Press the tab key where it says `TAB` to autocomplete the name of the port.
+
 ## Your First Program
 Copy the below code and replace the code in Mu with it.
 ```py
